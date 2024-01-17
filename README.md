@@ -103,7 +103,7 @@ resource "aws_security_group" "allow_inbound_ssh" {
 
     description = "Allow SSH"
     protocol = "tcp"
-    
+
     from_port = 22
     to_port = 22
     cidr_blocks = ["0.0.0.0/0"]
@@ -145,35 +145,6 @@ resource "aws_security_group" "allow_http" {
 
 ```
 
-## step 5c create a security group for flannel
-
-as per this link: https://github.com/coreos/coreos-kubernetes/blob/master/Documentation/kubernetes-networking.md
-
-```terraform
-
-resource "aws_security_group" "flannel_sg" {
-  name = "flannel-overlay-backend"
-  tags = {
-    Name = "Flannel Overlay backend"
-  }
-
-  ingress {
-    description = "flannel overlay backend"
-    protocol = "udp"
-    from_port = 8285
-    to_port = 8285
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    description = "flannel vxlan backend"
-    protocol = "udp"
-    from_port = 8472
-    to_port =  8472
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-}
 ```
 
 ## Step 6 create three nodes inside the subnet and attach the security group to them
