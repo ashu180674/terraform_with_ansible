@@ -276,7 +276,7 @@ resource "ansible_host" "worker_nodes" {
 }
 ```
 
-### step 10: speedrun the playbook creation
+
 
 ### step 11: run the playbook
 
@@ -290,11 +290,8 @@ ansible-playbook -i inventory.yml playbook.yml
 ### step 13: verify that everything works
 
 ```bash
-k get nodes
-k run nginx --image=nginx:alpine
-k expose pod nginx --name=demo-svc --port 8000 --target-port=80
-k get svc -o wide
-k run temp --image=nginx:alpine --rm -it --restart=Never -- curl http://demo-svc:8000
+kubectl get nodes
+kubectl create -f deploy.yaml
 ```
 
 ### do a bit of refactoring with outputs and variables
