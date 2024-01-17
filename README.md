@@ -145,7 +145,7 @@ resource "aws_security_group" "allow_http" {
 
 ```
 
-```
+
 
 ## Step 6 create three nodes inside the subnet and attach the security group to them
 
