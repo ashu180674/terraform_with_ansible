@@ -1,14 +1,5 @@
-chapters
 
-- initial setup (install terraform/setup the provider/terraform init)
-- networking
-- instances creation
-- ansible tings
-- test by deploying an nginx application
-- refactoring using vars
-- teardown
-
-# Show what we will build
+# what I have build
 
 three node cluster (one control plane and two worker nodes)
 
