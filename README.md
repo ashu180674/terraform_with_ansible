@@ -20,7 +20,7 @@ resource "aws_vpc" "kubeadm_vpc" {
   enable_dns_hostnames = true
 
   tags = {
-    # NOTE: very important to use an uppercase N to set the name in the console
+    
     Name = "kubeadm_test"
   }
 
